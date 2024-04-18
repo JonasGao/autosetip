@@ -11,8 +11,6 @@ int main() {
     CURLcode res;
     std::string readBuffer;
 
-    std::cout << "Startup" << std::endl;
-
     curl_global_init(CURL_GLOBAL_DEFAULT);
     curl = curl_easy_init();
     if (curl) {
