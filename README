@@ -9,3 +9,10 @@ How to use FetchContent
 
 1. https://github.com/Skycoder42/QHotkey/issues/24
 2. https://cmake.org/cmake/help/latest/module/FetchContent.html
+
+How to static compile curl
+
+1. https://discourse.cmake.org/t/statically-link-against-curl-lib/10324
+2. https://discourse.cmake.org/t/adding-curl-library-with-fetchcontent/10269/5
+3. https://discourse.cmake.org/t/what-is-the-correct-way-to-set-options-of-a-project-before-fetch-content/268
+4. https://github.com/curl/curl/blob/5ce164e0e9290c96eb7d502173426c0a135ec008/CMakeLists.txt#L88
