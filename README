@@ -1,0 +1,11 @@
+Help Documents
+--------------
+
+How to include libcurl
+
+1. https://github.com/jpbarrette/curlpp/tree/master
+
+How to use FetchContent
+
+1. https://github.com/Skycoder42/QHotkey/issues/24
+2. https://cmake.org/cmake/help/latest/module/FetchContent.html
