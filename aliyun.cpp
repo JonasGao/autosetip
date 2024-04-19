@@ -10,10 +10,19 @@
 struct param {
     std::string name;
     std::string value;
+    std::string to_string() const {
+        return name + "=" + value;
+    }
 };
 
 int main() {
-    std::vector<int> params = {1,2,3,4};
+    std::vector<param> params = {
+        {"Action", "TestApi"},
+        {"Version", "v1.0"}
+    };
+    for (const param& item : params) {
+        std::cout << item.to_string() << std::endl;
+    }
 
 //   std::sort(params.begin(), params.end());
 //
