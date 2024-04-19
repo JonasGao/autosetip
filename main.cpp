@@ -33,6 +33,34 @@ bool fetchIp(bool verbose, std::string &readBuffer) {
     }
 }
 
+bool setIp(bool verbose, std::string& readBuffer) {
+    CURL *curl;
+    CURLcode res;
+
+    curl = curl_easy_init();
+    if (curl) {
+        if (verbose) {
+            curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+        }
+        curl_easy_setopt(curl, CURLOPT_URL, "https://ecs.cn-shanghai.aliyuncs.com"
+                                            "?Action=DescribeSecurityGroups"
+                                            "&RegionId=cn-wuhan-lr");
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writer);
+        res = curl_easy_perform(curl);
+        if (res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s", curl_easy_strerror(res));
+            curl_easy_cleanup(curl);
+            return false;
+        }
+        curl_easy_cleanup(curl);
+        return true;
+    } else {
+        fprintf(stderr, "curl_easy_init() failed.");
+        return false;
+    }
+}
+
 int main(int argc, char *argv[]) {
     bool verbose = false;
     std::string buffer;
