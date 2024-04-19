@@ -16,3 +16,18 @@ How to static compile curl
 2. https://discourse.cmake.org/t/adding-curl-library-with-fetchcontent/10269/5
 3. https://discourse.cmake.org/t/what-is-the-correct-way-to-set-options-of-a-project-before-fetch-content/268
 4. https://github.com/curl/curl/blob/5ce164e0e9290c96eb7d502173426c0a135ec008/CMakeLists.txt#L88
+
+How to use shared curl library in MinGW
+
+1. https://packages.msys2.org/package/mingw-w64-x86_64-curl
+2. https://stackoverflow.com/questions/73407917/how-to-build-install-libcurl-on-windows-with-mingw
+3. https://everything.curl.dev/install/windows/win-msys2.html?highlight=mingw#get-curl-and-libcurl-on-msys2
+4. https://everything.curl.dev/install/windows/win-msys2.html#get-curl-and-libcurl-on-msys2
+
+How to check platform
+
+1. https://gitlab.kitware.com/cmake/community/-/wikis/doc/tutorials/How-To-Write-Platform-Checks#platform-checking
+
+How cmake to include more
+
+1. https://stackoverflow.com/questions/13703647/how-to-properly-add-include-directories-with-cmake

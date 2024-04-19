@@ -19,7 +19,7 @@ int main() {
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
         res = curl_easy_perform(curl);
         if (res != CURLE_OK) {
-            fprintf(stderr, "curl_easy_perm() failed: %s", curl_easy_strerror(res));
+            fprintf(stderr, "curl_easy_perform() failed: %s", curl_easy_strerror(res));
         } else {
             std::cout << "IP Address: " << readBuffer << std::endl;
         }
