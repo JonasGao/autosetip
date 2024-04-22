@@ -4,11 +4,10 @@
 #include <string>
 #include <regex>
 
-std::string decodeURIComponent(std::string encoded) {
+inline std::string decodeURIComponent(const std::string& encoded) {
 
     std::string decoded = encoded;
     std::smatch sm;
-    std::string haystack;
 
     int dynamicLength = decoded.size() - 2;
 
@@ -17,7 +16,7 @@ std::string decodeURIComponent(std::string encoded) {
     for (int i = 0; i < dynamicLength; i++)
     {
 
-        haystack = decoded.substr(i, 3);
+        std::string haystack = decoded.substr(i, 3);
 
         if (std::regex_match(haystack, sm, std::regex("%[0-9A-F]{2}")))
         {
@@ -33,13 +32,13 @@ std::string decodeURIComponent(std::string encoded) {
     return decoded;
 }
 
-std::string encodeURIComponent(std::string decoded)
+inline std::string encodeURIComponent(const std::string& decoded)
 {
 
     std::ostringstream oss;
-    std::regex r("[!'\\(\\)*-.0-9A-Za-z_~]");
+    const std::regex r(R"([!'\(\)*\-.0-9A-Za-z_~])");
 
-    for (char &c : decoded)
+    for (const char c : decoded)
     {
         if (std::regex_match((std::string){c}, r))
         {

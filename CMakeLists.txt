@@ -5,8 +5,7 @@ ENABLE_LANGUAGE(CXX)
 set(CMAKE_CXX_STANDARD 11)
 
 #add_executable(autosetip main.cpp aliyun.cpp)
-add_executable(autosetip aliyun.cpp
-        encode.h)
+add_executable(autosetip encode.h aliyun.cpp)
 
 if (MINGW)
     set(OPENSSL_ROOT_DIR "C:/msys64/mingw64/")
