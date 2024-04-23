@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 2.8)
-project(autosetip)
-ENABLE_LANGUAGE(CXX)
+cmake_minimum_required(VERSION 3.5)
+project(autosetip LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED 11)
 
 #add_executable(autosetip main.cpp aliyun.cpp)
 add_executable(autosetip encode.h aliyun.cpp)
