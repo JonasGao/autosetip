@@ -20,11 +20,7 @@ bool compareParam(const param &a, const param &b) {
     return a.name < b.name;
 }
 
-int main() {
-    std::vector<param> params = {
-        {"Version", "v12.0"},
-        {"Action", "Test+Api-Test.Api"},
-    };
+std::string toEncodedSignString(std::vector<param> params) {
     std::sort(params.begin(), params.end(), compareParam);
     std::stringstream ss1;
     std::stringstream ss2;
@@ -38,21 +34,16 @@ int main() {
     // debug log
     std::cout << paramStr << std::endl;
     ss2 << "GET&%2F&" << encodeURIComponent(paramStr);
+    return ss2.str();
+}
+
+int main() {
+    std::vector<param> params = {
+        {"Version", "v12.0"},
+        {"Action", "Test+Api-Test.Api"},
+    };
+    std::string s = toEncodedSignString(params);
     // debug log
-    std::cout << ss2.str() << std::endl;
-
-    //
-    //
-    //
-    //
-    //
-    //
-    //     // 去掉最后一个"&"
-    //
-    //
-    //
-    //    return ss2.str();
-    //    std::cout << "Signature: " << signature << std::endl;
-
+    std::cout << s << std::endl;
     return 0;
 }
